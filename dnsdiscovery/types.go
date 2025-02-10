@@ -15,10 +15,10 @@ type Country struct {
 
 // Result represents the scanning result for a single DNS server
 type Result struct {
-	countryCode string
-	country     string
-	provider    string
-	ip          string
-	responseMs  float64
-	isReachable bool
+	CountryCode string
+	Country     string
+	Provider    string
+	IP          string
+	ResponseMs  float64
+	IsReachable bool
 }

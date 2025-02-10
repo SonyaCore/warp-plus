@@ -7,7 +7,6 @@ import (
 	"fmt"
 	"log/slog"
 	"net/netip"
-	"os"
 	"path"
 
 	d "github.com/bepass-org/warp-plus/dnsdiscovery"
@@ -62,8 +61,7 @@ func RunWarp(ctx context.Context, l *slog.Logger, opts WarpOptions) error {
 		// Initialize dns discovery
 		dd, err := discovery.Init(l)
 		if err != nil {
-			fmt.Printf("Error loading configuration: %v\n", err)
-			os.Exit(1)
+			return fmt.Errorf("error caused in dnsdiscovery module: %w", err)
 		}
 
 		// start the scanning process
@@ -72,9 +70,9 @@ func RunWarp(ctx context.Context, l *slog.Logger, opts WarpOptions) error {
 		// return the fastest country
 		fastest := dd.Fastest(results)
 
-		opts.Psiphon.Country = fastest
+		opts.Psiphon.Country = fastest.CountryCode
 
-		l.Info("selected country", "country", opts.Psiphon.Country, "subsystem", "dnsdiscovery")
+		l.Info("selected country", "country", opts.Psiphon.Country, "ms", fastest.ResponseMs, "subsystem", "dnsdiscovery")
 	}
 
 	// Decide Working Scenario

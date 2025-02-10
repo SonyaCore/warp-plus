@@ -3,6 +3,7 @@ package dns
 import (
 	"context"
 	"log/slog"
+	"os"
 	"sync"
 	"time"
 )
@@ -33,6 +34,14 @@ func NewDiscovery(logger *slog.Logger) *Discovery {
 func (d *Discovery) Init(l *slog.Logger) (*Discovery, error) {
 
 	config := NewDiscovery(l)
+
+	if lookupHost := os.Getenv("LOOKUPHOST"); lookupHost != "" {
+		if err := validateDNS(lookupHost); err != nil {
+			return nil, err
+		}
+
+		d.Settings.TestDomains[0] = lookupHost
+	}
 
 	// load servers
 	if err := loadServers(&config.DNSServers); err != nil {
@@ -101,12 +110,12 @@ func (d *Discovery) Scan() []Result {
 	return results
 }
 
-func (d *Discovery) Fastest(results []Result) string {
+func (d *Discovery) Fastest(results []Result) *Result {
 	var fastest *Result
 
 	for i, result := range results {
 		// Skip unreachable servers
-		if !result.isReachable {
+		if !result.IsReachable {
 			continue
 		}
 
@@ -117,23 +126,23 @@ func (d *Discovery) Fastest(results []Result) string {
 		}
 
 		// Update if we find a faster server
-		if result.responseMs < fastest.responseMs {
+		if result.ResponseMs < fastest.ResponseMs {
 			fastest = &results[i]
 		}
 	}
 
-	return fastest.countryCode
+	return fastest
 }
 
 // lookup tests a single DNS server and measures response time
 func (d *Discovery) lookup(countryCode, country, provider, ip string) Result {
 
 	result := Result{
-		countryCode: countryCode,
-		country:     country,
-		provider:    provider,
-		ip:          ip,
-		isReachable: false,
+		CountryCode: countryCode,
+		Country:     country,
+		Provider:    provider,
+		IP:          ip,
+		IsReachable: false,
 	}
 
 	resolver := NewResolver(ip)
@@ -146,10 +155,10 @@ func (d *Discovery) lookup(countryCode, country, provider, ip string) Result {
 	duration := time.Since(startTime)
 
 	if err == nil {
-		result.isReachable = true
-		result.responseMs = float64(duration.Milliseconds())
+		result.IsReachable = true
+		result.ResponseMs = float64(duration.Milliseconds())
 	} else {
-		result.responseMs = -1
+		result.ResponseMs = -1
 	}
 	return result
 }
