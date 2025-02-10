@@ -7,7 +7,10 @@ import (
 	"fmt"
 	"log/slog"
 	"net/netip"
+	"os"
 	"path"
+
+	d "github.com/bepass-org/warp-plus/dnsdiscovery"
 
 	"github.com/bepass-org/warp-plus/iputils"
 	"github.com/bepass-org/warp-plus/psiphon"
@@ -52,8 +55,26 @@ func RunWarp(ctx context.Context, l *slog.Logger, opts WarpOptions) error {
 		return errors.New("can't use psiphon and gool at the same time")
 	}
 
-	if opts.Psiphon != nil && opts.Psiphon.Country == "" {
-		return errors.New("must provide country for psiphon")
+	if opts.Psiphon != nil && opts.Psiphon.Country == "Default" {
+		l.Info("using dns-discovery to find country", "subsystem", "dnsdiscovery")
+		var discovery = new(d.Discovery)
+
+		// Initialize dns discovery
+		dd, err := discovery.Init(l)
+		if err != nil {
+			fmt.Printf("Error loading configuration: %v\n", err)
+			os.Exit(1)
+		}
+
+		// start the scanning process
+		results := dd.Scan()
+
+		// return the fastest country
+		fastest := dd.Fastest(results)
+
+		opts.Psiphon.Country = fastest
+
+		l.Info("selected country", "country", opts.Psiphon.Country, "subsystem", "dnsdiscovery")
 	}
 
 	// Decide Working Scenario

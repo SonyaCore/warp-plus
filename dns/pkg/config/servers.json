@@ -1,0 +1,219 @@
+{
+  "AT": {
+    "country": "Austria",
+    "servers": [
+      {"name": "UPC Austria", "primary": "194.232.48.10", "secondary": "194.232.48.11"},
+      {"name": "A1 Telekom", "primary": "194.24.128.100", "secondary": "194.24.128.101"}
+    ]
+  },
+  "AU": {
+    "country": "Australia",
+    "servers": [
+      {"name": "Telstra", "primary": "139.130.4.5", "secondary": "139.130.4.6"},
+      {"name": "Optus", "primary": "198.142.152.28", "secondary": "198.142.152.29"}
+    ]
+  },
+  "BE": {
+    "country": "Belgium",
+    "servers": [
+      {"name": "Belgacom", "primary": "195.238.2.21", "secondary": "195.238.2.22"},
+      {"name": "Telenet", "primary": "195.130.130.11", "secondary": "195.130.130.12"}
+    ]
+  },
+  "BG": {
+    "country": "Bulgaria",
+    "servers": [
+      {"name": "Vivacom", "primary": "213.226.127.170", "secondary": "213.226.127.171"},
+      {"name": "Bulsat", "primary": "212.39.90.39", "secondary": "212.39.90.40"}
+    ]
+  },
+  "CA": {
+    "country": "Canada",
+    "servers": [
+      {"name": "Bell", "primary": "205.150.58.1", "secondary": "205.150.58.2"},
+      {"name": "Rogers", "primary": "64.71.255.198", "secondary": "64.71.255.253"}
+    ]
+  },
+  "CH": {
+    "country": "Switzerland",
+    "servers": [
+      {"name": "Swisscom", "primary": "195.186.1.111", "secondary": "195.186.4.111"},
+      {"name": "Sunrise", "primary": "194.158.230.53", "secondary": "194.158.230.54"}
+    ]
+  },
+  "CZ": {
+    "country": "Czech Republic",
+    "servers": [
+      {"name": "O2", "primary": "194.228.32.1", "secondary": "194.228.32.2"},
+      {"name": "UPC", "primary": "62.179.1.60", "secondary": "62.179.1.61"}
+    ]
+  },
+  "DE": {
+    "country": "Germany",
+    "servers": [
+      {"name": "Deutsche Telekom", "primary": "194.25.2.129", "secondary": "194.25.2.130"},
+      {"name": "Vodafone", "primary": "212.7.148.77", "secondary": "212.7.148.78"}
+    ]
+  },
+  "DK": {
+    "country": "Denmark",
+    "servers": [
+      {"name": "TDC", "primary": "194.239.134.83", "secondary": "193.162.153.164"},
+      {"name": "Telenor", "primary": "212.88.64.14", "secondary": "212.88.64.15"}
+    ]
+  },
+  "EE": {
+    "country": "Estonia",
+    "servers": [
+      {"name": "Elion", "primary": "194.126.115.18", "secondary": "194.126.115.19"},
+      {"name": "Telia", "primary": "195.50.193.14", "secondary": "195.50.193.15"}
+    ]
+  },
+  "ES": {
+    "country": "Spain",
+    "servers": [
+      {"name": "Telefonica", "primary": "194.179.1.100", "secondary": "194.179.1.101"},
+      {"name": "ONO", "primary": "62.42.230.24", "secondary": "62.42.63.52"}
+    ]
+  },
+  "FI": {
+    "country": "Finland",
+    "servers": [
+      {"name": "DNA", "primary": "62.241.198.245", "secondary": "62.241.198.246"},
+      {"name": "Elisa", "primary": "193.229.0.40", "secondary": "193.229.0.41"}
+    ]
+  },
+  "FR": {
+    "country": "France",
+    "servers": [
+      {"name": "Orange", "primary": "194.51.3.56", "secondary": "194.51.3.57"},
+      {"name": "Free", "primary": "212.27.40.240", "secondary": "212.27.40.241"}
+    ]
+  },
+  "GB": {
+    "country": "United Kingdom",
+    "servers": [
+      {"name": "BT", "primary": "194.72.0.34", "secondary": "194.72.0.35"},
+      {"name": "Virgin Media", "primary": "194.168.4.100", "secondary": "194.168.8.100"}
+    ]
+  },
+  "HR": {
+    "country": "Croatia",
+    "servers": [
+      {"name": "T-Com", "primary": "195.29.150.3", "secondary": "195.29.150.4"},
+      {"name": "Iskon", "primary": "213.191.128.76", "secondary": "213.191.128.77"}
+    ]
+  },
+  "HU": {
+    "country": "Hungary",
+    "servers": [
+      {"name": "Magyar Telekom", "primary": "194.149.0.157", "secondary": "194.149.0.158"},
+      {"name": "UPC", "primary": "195.228.254.149", "secondary": "195.228.254.150"}
+    ]
+  },
+  "IE": {
+    "country": "Ireland",
+    "servers": [
+      {"name": "Eir", "primary": "159.134.157.9", "secondary": "159.134.157.10"},
+      {"name": "Virgin Media", "primary": "89.19.64.36", "secondary": "89.19.64.37"}
+    ]
+  },
+  "IN": {
+    "country": "India",
+    "servers": [
+      {"name": "BSNL", "primary": "218.248.255.161", "secondary": "218.248.255.162"},
+      {"name": "Airtel", "primary": "202.138.120.4", "secondary": "202.138.120.5"}
+    ]
+  },
+  "IT": {
+    "country": "Italy",
+    "servers": [
+      {"name": "Telecom Italia", "primary": "212.216.112.112", "secondary": "212.216.172.62"},
+      {"name": "Fastweb", "primary": "213.140.2.43", "secondary": "213.140.2.44"}
+    ]
+  },
+  "JP": {
+    "country": "Japan",
+    "servers": [
+      {"name": "NTT", "primary": "210.139.253.24", "secondary": "210.139.253.25"},
+      {"name": "KDDI", "primary": "203.141.128.11", "secondary": "203.141.128.12"}
+    ]
+  },
+  "LV": {
+    "country": "Latvia",
+    "servers": [
+      {"name": "Lattelecom", "primary": "195.13.177.3", "secondary": "195.13.177.4"},
+      {"name": "Telia", "primary": "195.8.8.8", "secondary": "195.8.8.9"}
+    ]
+  },
+  "NL": {
+    "country": "Netherlands",
+    "servers": [
+      {"name": "KPN", "primary": "195.121.1.34", "secondary": "195.121.1.35"},
+      {"name": "Ziggo", "primary": "212.54.35.25", "secondary": "212.54.35.26"}
+    ]
+  },
+  "NO": {
+    "country": "Norway",
+    "servers": [
+      {"name": "Telenor", "primary": "149.156.1.1", "secondary": "149.156.1.2"},
+      {"name": "Telia", "primary": "213.226.255.10", "secondary": "213.226.255.11"}
+    ]
+  },
+  "PL": {
+    "country": "Poland",
+    "servers": [
+      {"name": "Orange", "primary": "194.204.152.34", "secondary": "194.204.152.35"},
+      {"name": "Netia", "primary": "195.114.161.61", "secondary": "195.114.161.62"}
+    ]
+  },
+  "PT": {
+    "country": "Portugal",
+    "servers": [
+      {"name": "MEO", "primary": "194.65.3.20", "secondary": "194.65.3.21"},
+      {"name": "NOS", "primary": "212.18.160.133", "secondary": "212.18.160.134"}
+    ]
+  },
+  "RO": {
+    "country": "Romania",
+    "servers": [
+      {"name": "RCS & RDS", "primary": "193.231.236.25", "secondary": "193.231.236.26"},
+      {"name": "UPC", "primary": "195.158.0.3", "secondary": "195.158.0.4"}
+    ]
+  },
+  "RS": {
+    "country": "Serbia",
+    "servers": [
+      {"name": "Telekom Srbija", "primary": "195.178.32.2", "secondary": "195.178.32.3"},
+      {"name": "SBB", "primary": "195.250.98.1", "secondary": "195.250.98.2"}
+    ]
+  },
+  "SE": {
+    "country": "Sweden",
+    "servers": [
+      {"name": "Telia", "primary": "195.67.199.18", "secondary": "195.67.199.19"},
+      {"name": "Telenor", "primary": "195.54.122.198", "secondary": "195.54.122.199"}
+    ]
+  },
+  "SG": {
+    "country": "Singapore",
+    "servers": [
+      {"name": "Singtel", "primary": "165.21.83.88", "secondary": "165.21.83.89"},
+      {"name": "StarHub", "primary": "203.116.1.78", "secondary": "203.116.1.79"}
+    ]
+  },
+  "SK": {
+    "country": "Slovakia",
+    "servers": [
+      {"name": "Slovak Telekom", "primary": "195.168.0.1", "secondary": "195.168.0.2"},
+      {"name": "Orange", "primary": "213.151.233.10", "secondary": "213.151.233.11"}
+    ]
+  },
+  "US": {
+    "country": "United States",
+    "servers": [
+      {"name": "Comcast", "primary": "75.75.75.75", "secondary": "75.75.76.76"},
+      {"name": "AT&T", "primary": "68.94.156.1", "secondary": "68.94.157.1"}
+    ]
+  }
+}

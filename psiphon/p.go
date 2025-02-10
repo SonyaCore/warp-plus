@@ -14,6 +14,7 @@ import (
 )
 
 var Countries = []string{
+	"Default",
 	"AT",
 	"AU",
 	"BE",
@@ -109,7 +110,6 @@ func StartTunnel(ctx context.Context, l *slog.Logger, config *psiphon.Config) er
 	if err != nil {
 		return errors.New("psiphon.NewController failed")
 	}
-
 	// Begin tunnel connection
 	go func() {
 		// Start the tunnel. Only returns on error (or internal timeout).
