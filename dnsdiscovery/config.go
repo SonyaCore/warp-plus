@@ -4,11 +4,13 @@ import (
 	_ "embed"
 	"encoding/json"
 	"errors"
+	"fmt"
+	"os"
 )
 
 type DNSServers map[string]Country
 
-//go:embed config/servers.json
+//go:embed servers.json
 var EServers []byte
 
 // ScanSettings contains configurable parameters for dns discovery process
@@ -21,8 +23,21 @@ type ScanSettings struct {
 
 // loadServers loads server config from list of servers in json file
 func loadServers(servers *DNSServers) error {
+	if serverPath := os.Getenv("SERVERSPATH"); serverPath != "" {
+		// Read file from path
+		data, err := os.ReadFile(serverPath)
+		if err != nil {
+			return fmt.Errorf("error reading server file: %w", err)
+		}
+
+		if err := json.Unmarshal(data, &servers); err != nil {
+			return fmt.Errorf("error parsing server file: %w", err)
+		}
+		return nil
+	}
+
 	if err := json.Unmarshal(EServers, &servers); err != nil {
-		return errors.New("error parsing server file: " + err.Error())
+		return fmt.Errorf("error parsing server file: %w", err)
 	}
 	return nil
 }
